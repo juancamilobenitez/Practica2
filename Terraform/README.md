@@ -75,20 +75,26 @@ ion = "Private IP address of the VM"
 
 ```hcl
 terraform init
+
 ```
 
 ##Paso 7: Vista previa de los cambios
 
 ###Ejecuta el siguiente comando para obtener una vista previa de los cambios que Terraform realizará en la infraestructura:
+
 ```hcl
 
 Terraform plan
-```
-##Paso 8: Aplicación de los cambios
 
+```
+
+##Paso 8: Aplicación de los cambios
 
 ###Si todo se ve bien en la vista previa, ejecuta el siguiente comando para aplicar los cambios y crear la Máquina Virtual:
 
 ```hcl
+
 terraform apply
+
 ```
+
