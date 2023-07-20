@@ -10,7 +10,7 @@ Este proyecto te guiará a través de los pasos para crear una Máquina Virtual 
 
 En el archivo `main.tf`, define los recursos necesarios para crear la Máquina Virtual en Azure. Por ejemplo:
 
-```hcl
+
 provider "azurerm" {
   features {}
 }
