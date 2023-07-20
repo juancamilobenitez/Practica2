@@ -27,7 +27,7 @@ resource "azurerm_virtual_network" "example" {
   resource_group_name = azurerm_resource_group.example.name
 }
 
-##Paso 3: Archivo single_vm.tf
+## Paso 3: Archivo single_vm.tf
 
 ###El archivo single_vm.tf contendrá la configuración específica para la creación de la Máquina Virtual, como el tamaño, sistema operativo, y otros detalles. Por ejemplo:
 
