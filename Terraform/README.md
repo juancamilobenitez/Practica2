@@ -60,10 +60,10 @@ output "vm_public_ip" {
 }
 ```
 ## Paso 5: Archivo variables.tf
-```hcl
+
 
 ###El archivo variables.tf puede ser utilizado para definir variables que se utilizarán en el archivo main.tf. Por ejemplo
-
+```hcl
 
 ion = "Private IP address of the VM"
 }
