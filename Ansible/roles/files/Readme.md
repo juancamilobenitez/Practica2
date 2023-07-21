@@ -43,6 +43,7 @@ Ejecuta la playbook de Ansible para construir la imagen del servidor web y subir
 
 ```bash
 ansible-playbook "nombre del playbook".yml
+
 ```
 Esto ejecutará la playbook y realizará los siguientes pasos:
 
@@ -50,6 +51,17 @@ Construirá la imagen del servidor web utilizando el archivo Containerfile con P
 Iniciará sesión en el Registro de Contenedores de Azure utilizando tus credenciales.
 Subirá la imagen del servidor web al Registro de Contenedores de Azure.
 
-##4. Verificar el despliegue
+## 4. Verificar el despliegue
+Una vez que la playbook haya finalizado con éxito, puedes verificar que la imagen del servidor web esté en el Registro de Contenedores de Azure.
+
+## Notas adicionales
+
+Asegúrate de tener las credenciales correctas para el Registro de Contenedores de Azure en el archivo deploy_web_server.yml:
+
+vars:
+  azure_username: "tu_usuario"
+  azure_password: "tu_contraseña"
+
+
 
 
