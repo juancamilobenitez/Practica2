@@ -13,6 +13,4 @@ Este repositorio contiene el código y los archivos necesarios para desplegar un
 - Terraform instalado en tu máquina local o entorno de trabajo.
 - Azure CLI configurado y autenticado para acceder a tu cuenta de Azure.
 
-## Instrucciones de uso
 
-Sigue los pasos a continuación para desplegar la infraestructura y la aplicación en Azure:
