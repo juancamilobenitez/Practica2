@@ -30,7 +30,7 @@ resource "azurerm_virtual_network" "example" {
 ```
 ## Paso 3: Archivo single_vm.tf
 
-###El archivo single_vm.tf contendrá la configuración específica para la creación de la Máquina Virtual, como el tamaño, sistema operativo, y otros detalles. Por ejemplo:
+### El archivo single_vm.tf contendrá la configuración específica para la creación de la Máquina Virtual, como el tamaño, sistema operativo, y otros detalles. Por ejemplo:
 ```hcl
 resource "azurerm_linux_virtual_machine" "vm" {
   name                = "myVM"
@@ -44,7 +44,7 @@ resource "azurerm_linux_virtual_machine" "vm" {
   image_sku           = "16.04-LTS"
 }
 ```
-##Paso 4: Archivo outputs.tf
+## Paso 4: Archivo outputs.tf
 ```hcl
 El archivo outputs.tf permite definir los valores que serán mostrados como salida después de crear la Máquina Virtual. Por ejemplo:
 
@@ -62,25 +62,26 @@ output "vm_public_ip" {
 ## Paso 5: Archivo variables.tf
 
 
-###El archivo variables.tf puede ser utilizado para definir variables que se utilizarán en el archivo main.tf. Por ejemplo
+### El archivo variables.tf puede ser utilizado para definir variables que se utilizarán en el archivo main.tf. Por ejemplo
 ```hcl
 
 ion = "Private IP address of the VM"
 }
 
 ```
+
 ## Paso 6: Inicialización de Terraform
 
-###En la línea de comandos, navega al directorio donde se encuentra el archivo main.tf y ejecuta el siguiente comando para inicializar Terraform:
+### En la línea de comandos, navega al directorio donde se encuentra el archivo main.tf y ejecuta el siguiente comando para inicializar Terraform:
 
 ```hcl
 terraform init
 
 ```
 
-##Paso 7: Vista previa de los cambios
+## Paso 7: Vista previa de los cambios
 
-###Ejecuta el siguiente comando para obtener una vista previa de los cambios que Terraform realizará en la infraestructura:
+### Ejecuta el siguiente comando para obtener una vista previa de los cambios que Terraform realizará en la infraestructura:
 
 ```hcl
 
@@ -88,9 +89,9 @@ Terraform plan
 
 ```
 
-##Paso 8: Aplicación de los cambios
+## Paso 8: Aplicación de los cambios
 
-###Si todo se ve bien en la vista previa, ejecuta el siguiente comando para aplicar los cambios y crear la Máquina Virtual:
+### Si todo se ve bien en la vista previa, ejecuta el siguiente comando para aplicar los cambios y crear la Máquina Virtual:
 
 ```hcl
 
