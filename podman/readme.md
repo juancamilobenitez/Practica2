@@ -1,4 +1,4 @@
-# Despliegue de Contenedor Web en Azure con Podman
+# Despliegue de Contenedor Web en Azure con Podman De manera Manual (la automatica esta en la carpeta Ansible)
 
 Este repositorio contiene los archivos y comandos necesarios para desplegar un contenedor web en Microsoft Azure utilizando Podman.
 
