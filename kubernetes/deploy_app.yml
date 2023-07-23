@@ -7,5 +7,5 @@
       become: yes
       k8s:
         state: present
-        definition: "/home/azureuser/Practica2/kubernetes/Deplyment.yaml"
+        definition: "/home/azureuser/Practica2/kubernetes/Deployment.yaml"
         kubeconfig: "/ruta/al/archivo/kubeconfig"  # Si es necesario para autenticación

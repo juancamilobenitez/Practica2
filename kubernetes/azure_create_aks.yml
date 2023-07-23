@@ -1,3 +1,4 @@
+---
 - name: Create Azure Kubernetes Service
   hosts: mi_cluster_kubernetes
   connection: local
@@ -11,7 +12,7 @@
     ssh_key: /home/azureuser/Practica2/kubernetes/nodo.pem
     azure_client_id: 7dfd3753-9378-474e-b9e2-9d33d1ba4377
     azure_client_secret: 432ab06e-2d91-4f09-b64b-e32af5509552
-    aks_version: aks_version
+    aks_version: 1.22.3
   tasks:
     - name: Create resource group
       azure_rm_resourcegroup:
@@ -39,4 +40,3 @@
             vm_size: Standard_D2_v2
         tags:
           Environment: Production
-
