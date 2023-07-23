@@ -12,3 +12,4 @@
 
     - name: Push the web server image to Azure Container Registry
       command: podman push practicasegunda.azurecr.io/servidor_web:latest
+
