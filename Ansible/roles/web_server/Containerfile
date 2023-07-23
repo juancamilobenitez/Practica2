@@ -1,6 +1,8 @@
-
 FROM nginx:latest
-COPY index.html /usr/share/nginx/html/
-COPY nginx.conf /etc/nginx/nginx.conf
-EXPOSE 80
+COPY index.html /home/azureuser/Practica2/Ansible/roles/web_server/
+COPY nginx.conf /home/azureuser/Practica2/Ansible/roles/web_server/
+COPY server.crt /home/azureuser/Practica2/Ansible/roles/web_server/
+COPY server.key /home/azureuser/Practica2/Ansible/roles/web_server/
+EXPOSE 443                              
 CMD ["nginx", "-g", "daemon off;"]
+
