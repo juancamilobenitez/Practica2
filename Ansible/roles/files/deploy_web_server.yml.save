@@ -2,7 +2,7 @@
   hosts: localhost
   tasks:
     - name: Build the web server image with Podman
-      command: podman build -t practicasegunda.azurecr.io/servidor_web:latest /home/azureuser/Practica2/Ansible/roles/web_server/
+      command: podman build -t practicasegunda.azurecr.io/servidor_web:latest /home/azureuser/Practica2/Ansible/roles/files#
 
     - name: Log in to Azure Container Registry
       command: podman login --username "{{ azure_username }}" --password "{{ azure_password }}" practicasegunda.azurecr.io
@@ -11,4 +11,4 @@
         azure_password: "SZbVgVduwYdwCS+govJUYBKNd1HFILcfq5YFfut7hB+ACRD/6WFs"
 
     - name: Push the web server image to Azure Container Registry
-      command: podman push practicasegunda.azurecr.io/servidor_web:latest
+      command: podma
