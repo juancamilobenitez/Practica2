@@ -28,12 +28,13 @@ Cambia tu_usuario y tu_repositorio por tu nombre de usuario de GitHub y el nombr
 En la carpeta Practica2/Ansible/roles/files, crea un archivo llamado Containerfile con el siguiente contenido:
 
 ```bash
-FROM fedora:latest
-RUN dnf -y install nginx && dnf clean all
-COPY index.html /usr/share/nginx/html/
-COPY nginx.conf /etc/
-EXPOSE 8080
-CMD ["/usr/sbin/nginx","-c","/etc/nginx.conf"]
+FROM nginx:latest
+COPY index.html /home/azureuser/Practica2/Ansible/roles/web_server/
+COPY nginx.conf /home/azureuser/Practica2/Ansible/roles/web_server/
+COPY server.crt /home/azureuser/Practica2/Ansible/roles/web_server/
+COPY server.key /home/azureuser/Practica2/Ansible/roles/web_server/
+EXPOSE 443                              
+CMD ["nginx", "-g", "daemon off;"]
 ```
 Este archivo define la configuración para construir la imagen del servidor web con Nginx usando Podman.
 
