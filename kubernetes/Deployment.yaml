@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-app
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      containers:
+        - name: ContenedorMongodb
+          image: my-acr.azurecr.io/my-app-image:latest
+          ports:
+            - containerPort: 80
+          env:
+            - name: DATABASE_URL
+              value: "mongodb://my-mongodb-service:27017/my-database"

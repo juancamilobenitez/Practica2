@@ -1,0 +1,42 @@
+- name: Create Azure Kubernetes Service
+  hosts: mi_cluster_kubernetes
+  connection: local
+  become: yes
+  become_user: azureuser
+  vars:
+    resource_group: cloud-shell-storage-westeurope
+    location: West Europe
+    aks_name: cluster1
+    username: azureuser
+    ssh_key: /home/azureuser/Practica2/kubernetes/nodo.pem
+    azure_client_id: 7dfd3753-9378-474e-b9e2-9d33d1ba4377
+    azure_client_secret: 432ab06e-2d91-4f09-b64b-e32af5509552
+    aks_version: aks_version
+  tasks:
+    - name: Create resource group
+      azure_rm_resourcegroup:
+        name: "{{ resource_group }}"
+        location: "{{ location }}"
+        client_id: "{{ azure_client_id }}"
+        secret: "{{ azure_client_secret }}"
+
+    - name: Create a managed Azure Container Services (AKS) cluster
+      azure_rm_aks:
+        name: "{{ aks_name }}"
+        location: "{{ location }}"
+        resource_group: "{{ resource_group }}"
+        dns_prefix: "{{ aks_name }}"
+        kubernetes_version: "{{ aks_version }}"
+        linux_profile:
+          admin_username: "{{ username }}"
+          ssh_key: "{{ ssh_key }}"
+        service_principal:
+          client_id: "{{ azure_client_id }}"
+          client_secret: "{{ azure_client_secret }}"
+        agent_pool_profiles:
+          - name: default
+            count: 2
+            vm_size: Standard_D2_v2
+        tags:
+          Environment: Production
+

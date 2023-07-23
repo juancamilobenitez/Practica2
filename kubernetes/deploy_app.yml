@@ -1,0 +1,11 @@
+---
+- name: Desplegar aplicación en Kubernetes
+  hosts: mi_cluster_kubernetes
+  gather_facts: no
+  tasks:
+    - name: Aplicar recursos de Kubernetes
+      become: yes
+      k8s:
+        state: present
+        definition: "/home/azureuser/Practica2/kubernetes/Deplyment.yaml"
+        kubeconfig: "/ruta/al/archivo/kubeconfig"  # Si es necesario para autenticación
