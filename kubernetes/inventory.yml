@@ -1,5 +1,0 @@
-mi_cluster_kubernetes:
-  hosts:
-    10.1.0.5:
-      ansible_host: 10.1.0.5
-
